@@ -294,8 +294,8 @@
         "showSessionButtonsOnLockScreen": true
     },
     "hooks": {
-        "darkModeChange": "",
-        "enabled": false,
+        "darkModeChange": "/home/feraxhp/.config/niri/themes/toggle.sh \"$1\"",
+        "enabled": true,
         "performanceModeDisabled": "",
         "performanceModeEnabled": "",
         "screenLock": "",
