@@ -49,7 +49,7 @@
                 {
                     "colorizeDistroLogo": false,
                     "colorizeSystemIcon": "secondary",
-                    "customIconPath": "/home/feraxhp/images/system/hy.svg",
+                    "customIconPath": "/home/feraxhp/.config/noctalia/images/icon.svg",
                     "enableColorization": false,
                     "icon": "noctalia",
                     "id": "ControlCenter",
@@ -272,7 +272,7 @@
         "allowPanelsOnScreenWithoutBar": true,
         "animationDisabled": false,
         "animationSpeed": 1,
-        "avatarImage": "/home/feraxhp/images/system/face",
+        "avatarImage": "/home/feraxhp/.config/noctalia/images/face.png",
         "boxRadiusRatio": 1,
         "compactLockScreen": false,
         "dimmerOpacity": 0,
