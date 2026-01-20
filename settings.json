@@ -148,6 +148,7 @@
                     "id": "Brightness"
                 },
                 {
+                    "deviceNativePath": "",
                     "displayMode": "alwaysShow",
                     "hideIfNotDetected": true,
                     "id": "Battery",
@@ -227,6 +228,16 @@
                 },
                 {
                     "id": "KeepAwake"
+                },
+                {
+                    "enableOnStateLogic": true,
+                    "generalTooltipText": "Hoppscotch agent",
+                    "icon": "access-point-off",
+                    "id": "CustomButton",
+                    "onClicked": "pkill hopp || ~/apps/hopp.agent",
+                    "onMiddleClicked": "",
+                    "onRightClicked": "",
+                    "stateChecksJson": "[{\"command\":\"pgrep 'hopp'\",\"icon\":\"access-point\"}]"
                 }
             ],
             "right": [
