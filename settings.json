@@ -1,15 +1,17 @@
 {
     "appLauncher": {
         "autoPasteClipboard": false,
+        "clipboardWatchImageCommand": "wl-paste --type image --watch cliphist store",
+        "clipboardWatchTextCommand": "wl-paste --type text --watch cliphist store",
         "clipboardWrapText": true,
         "customLaunchPrefix": "",
         "customLaunchPrefixEnabled": false,
         "enableClipPreview": true,
         "enableClipboardHistory": true,
+        "enableSettingsSearch": true,
         "iconMode": "tabler",
         "ignoreMouseInput": false,
         "pinnedApps": [
-            "youtube-music"
         ],
         "position": "top_center",
         "screenshotAnnotationTool": "",
@@ -26,21 +28,28 @@
         ],
         "preferredPlayer": "",
         "visualizerType": "wave",
+        "volumeFeedback": false,
         "volumeOverdrive": true,
         "volumeStep": 1
     },
     "bar": {
         "backgroundOpacity": 0.93,
+        "barType": "simple",
         "capsuleOpacity": 1,
         "density": "default",
         "exclusive": true,
         "floating": false,
+        "frameRadius": 12,
+        "frameThickness": 8,
+        "hideOnOverview": false,
         "marginHorizontal": 4,
         "marginVertical": 4,
         "monitors": [
         ],
         "outerCorners": true,
         "position": "top",
+        "screenOverrides": [
+        ],
         "showCapsule": true,
         "showOutline": true,
         "useSeparateOpacity": false,
@@ -58,14 +67,19 @@
                 {
                     "characterCount": 2,
                     "colorizeIcons": false,
+                    "emptyColor": "secondary",
                     "enableScrollWheel": true,
+                    "focusedColor": "primary",
                     "followFocusedScreen": false,
                     "groupedBorderOpacity": 1,
                     "hideUnoccupied": false,
                     "iconScale": 0.8,
                     "id": "Workspace",
                     "labelMode": "index",
+                    "occupiedColor": "secondary",
+                    "reverseScroll": false,
                     "showApplications": false,
+                    "showBadge": true,
                     "showLabelsOnlyWhenOccupied": true,
                     "unfocusedIconsOpacity": 1
                 },
@@ -95,6 +109,7 @@
                     "showMemoryAsPercent": false,
                     "showMemoryUsage": true,
                     "showNetworkStats": false,
+                    "showSwapUsage": false,
                     "useMonospaceFont": true,
                     "usePrimaryColor": false
                 },
@@ -130,8 +145,10 @@
                 },
                 {
                     "hideWhenZero": false,
+                    "hideWhenZeroUnread": false,
                     "id": "NotificationHistory",
-                    "showUnreadBadge": true
+                    "showUnreadBadge": true,
+                    "unreadBadgeColor": "primary"
                 },
                 {
                     "displayMode": "onhover",
@@ -150,6 +167,7 @@
                 {
                     "deviceNativePath": "",
                     "displayMode": "alwaysShow",
+                    "hideIfIdle": false,
                     "hideIfNotDetected": true,
                     "id": "Battery",
                     "showNoctaliaPerformance": false,
@@ -160,7 +178,7 @@
         }
     },
     "brightness": {
-        "brightnessStep": 10,
+        "brightnessStep": 5,
         "enableDdcSupport": true,
         "enforceMinimum": true
     },
@@ -181,10 +199,11 @@
         ]
     },
     "colorSchemes": {
-        "darkMode": false,
+        "darkMode": true,
+        "generationMethod": "tonal-spot",
         "manualSunrise": "08:00",
         "manualSunset": "17:00",
-        "matugenSchemeType": "scheme-fruit-salad",
+        "monitorForColors": "",
         "predefinedScheme": "Catppuccin",
         "schedulingMode": "manual",
         "useWallpaperColors": false
@@ -280,19 +299,23 @@
     },
     "general": {
         "allowPanelsOnScreenWithoutBar": true,
+        "allowPasswordWithFprintd": true,
         "animationDisabled": false,
-        "animationSpeed": 1,
+        "animationSpeed": 1.25,
+        "autoStartAuth": true,
         "avatarImage": "/home/feraxhp/.config/noctalia/images/face.png",
         "boxRadiusRatio": 1,
-        "compactLockScreen": false,
+        "compactLockScreen": true,
         "dimmerOpacity": 0,
-        "enableShadows": true,
+        "enableLockScreenCountdown": true,
+        "enableShadows": false,
         "forceBlackScreenCorners": false,
-        "iRadiusRatio": 1,
+        "iRadiusRatio": 0.63,
         "language": "",
         "lockOnSuspend": true,
-        "radiusRatio": 1,
-        "scaleRatio": 0.9,
+        "lockScreenCountdownDuration": 10000,
+        "radiusRatio": 0.6,
+        "scaleRatio": 0.8500000000000001,
         "screenRadiusRatio": 1,
         "shadowDirection": "bottom_right",
         "shadowOffsetX": 2,
@@ -300,7 +323,8 @@
         "showChangelogOnStartup": true,
         "showHibernateOnLockScreen": false,
         "showScreenCorners": false,
-        "showSessionButtonsOnLockScreen": false
+        "showSessionButtonsOnLockScreen": false,
+        "telemetryEnabled": false
     },
     "hooks": {
         "darkModeChange": "/home/feraxhp/.config/niri/themes/toggle.sh \"$1\"",
@@ -309,6 +333,8 @@
         "performanceModeEnabled": "",
         "screenLock": "",
         "screenUnlock": "",
+        "session": "",
+        "startup": "",
         "wallpaperChange": ""
     },
     "location": {
@@ -346,6 +372,7 @@
         "backgroundOpacity": 1,
         "criticalUrgencyDuration": 15,
         "enableKeyboardLayoutToast": true,
+        "enableMediaToast": false,
         "enabled": true,
         "location": "top_right",
         "lowUrgencyDuration": 3,
@@ -354,16 +381,16 @@
         ],
         "normalUrgencyDuration": 8,
         "overlayLayer": true,
-        "respectExpireTimeout": false,
+        "respectExpireTimeout": true,
         "saveToHistory": {
             "critical": true,
-            "low": true,
-            "normal": true
+            "low": false,
+            "normal": false
         },
         "sounds": {
             "criticalSoundFile": "",
             "enabled": true,
-            "excludedApps": "discord,firefox,chrome,chromium,edge",
+            "excludedApps": "discord,firefox,chrome,chromium,edge,zen-browser,",
             "lowSoundFile": "",
             "normalSoundFile": "",
             "separateSounds": false,
@@ -386,7 +413,7 @@
         "overlayLayer": true
     },
     "sessionMenu": {
-        "countdownDuration": 10000,
+        "countdownDuration": 5000,
         "enableCountdown": true,
         "largeButtonsLayout": "grid",
         "largeButtonsStyle": false,
@@ -395,7 +422,7 @@
             {
                 "action": "lock",
                 "command": "",
-                "countdownEnabled": true,
+                "countdownEnabled": false,
                 "enabled": true
             },
             {
@@ -432,58 +459,65 @@
         "showHeader": true,
         "showNumberLabels": true
     },
-    "settingsVersion": 39,
+    "settingsVersion": 46,
     "systemMonitor": {
-        "cpuCriticalThreshold": 90,
-        "cpuPollingInterval": 3000,
-        "cpuWarningThreshold": 80,
+        "cpuCriticalThreshold": 80,
+        "cpuPollingInterval": 2000,
+        "cpuWarningThreshold": 70,
         "criticalColor": "#d20f39",
-        "diskCriticalThreshold": 90,
-        "diskPollingInterval": 3000,
-        "diskWarningThreshold": 80,
+        "diskCriticalThreshold": 80,
+        "diskPollingInterval": 2000,
+        "diskWarningThreshold": 65,
         "enableDgpuMonitoring": true,
         "externalMonitor": "resources || missioncenter || jdsystemmonitor || corestats || system-monitoring-center || gnome-system-monitor || plasma-systemmonitor || mate-system-monitor || ukui-system-monitor || deepin-system-monitor || pantheon-system-monitor",
         "gpuCriticalThreshold": 85,
         "gpuPollingInterval": 3000,
         "gpuWarningThreshold": 70,
-        "loadAvgPollingInterval": 3000,
-        "memCriticalThreshold": 90,
-        "memPollingInterval": 3000,
-        "memWarningThreshold": 80,
-        "networkPollingInterval": 3000,
-        "tempCriticalThreshold": 85,
-        "tempPollingInterval": 3000,
-        "tempWarningThreshold": 70,
+        "loadAvgPollingInterval": 2000,
+        "memCriticalThreshold": 80,
+        "memPollingInterval": 2000,
+        "memWarningThreshold": 70,
+        "networkPollingInterval": 2000,
+        "swapCriticalThreshold": 65,
+        "swapWarningThreshold": 55,
+        "tempCriticalThreshold": 75,
+        "tempPollingInterval": 2000,
+        "tempWarningThreshold": 60,
         "useCustomColors": false,
         "warningColor": "#40a02b"
     },
     "templates": {
-        "alacritty": true,
-        "cava": false,
-        "code": false,
-        "discord": true,
-        "emacs": false,
-        "enableUserTemplates": false,
-        "foot": false,
-        "fuzzel": false,
-        "ghostty": false,
-        "gtk": true,
-        "helix": false,
-        "hyprland": false,
-        "kcolorscheme": true,
-        "kitty": false,
-        "mango": false,
-        "niri": false,
-        "pywalfox": false,
-        "qt": true,
-        "spicetify": false,
-        "telegram": false,
-        "vicinae": false,
-        "walker": false,
-        "wezterm": false,
-        "yazi": false,
-        "zed": false,
-        "zenBrowser": true
+        "activeTemplates": [
+            {
+                "enabled": true,
+                "id": "gtk"
+            },
+            {
+                "enabled": true,
+                "id": "qt"
+            },
+            {
+                "enabled": true,
+                "id": "kcolorscheme"
+            },
+            {
+                "enabled": true,
+                "id": "discord"
+            },
+            {
+                "enabled": true,
+                "id": "zenBrowser"
+            },
+            {
+                "enabled": true,
+                "id": "btop"
+            },
+            {
+                "enabled": true,
+                "id": "alacritty"
+            }
+        ],
+        "enableUserTheming": false
     },
     "ui": {
         "bluetoothDetailsViewMode": "grid",
@@ -501,7 +535,8 @@
         "wifiDetailsViewMode": "grid"
     },
     "wallpaper": {
-        "directory": "/home/feraxhp/images/walls",
+        "automationEnabled": false,
+        "directory": "/home/feraxhp/Pictures/Wallpapers",
         "enableMultiMonitorDirectories": false,
         "enabled": true,
         "fillColor": "#000000",
@@ -511,16 +546,16 @@
         ],
         "overviewEnabled": true,
         "panelPosition": "top_center",
-        "randomEnabled": false,
         "randomIntervalSec": 300,
-        "recursiveSearch": false,
         "setWallpaperOnAllMonitors": true,
+        "showHiddenFiles": false,
         "solidColor": "#1a1a2e",
         "transitionDuration": 1500,
         "transitionEdgeSmoothness": 0.05,
         "transitionType": "fade",
         "useSolidColor": false,
         "useWallhaven": false,
+        "viewMode": "single",
         "wallhavenApiKey": "",
         "wallhavenCategories": "111",
         "wallhavenOrder": "desc",
