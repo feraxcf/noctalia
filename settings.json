@@ -10,7 +10,7 @@
         "enableClipboardHistory": true,
         "enableSettingsSearch": true,
         "enableWindowsSearch": true,
-        "iconMode": "tabler",
+        "iconMode": "native",
         "ignoreMouseInput": false,
         "pinnedApps": [
         ],
@@ -91,10 +91,10 @@
                 {
                     "clockColor": "none",
                     "customFont": "",
-                    "formatHorizontal": "HH:mm ddd, MMM dd",
+                    "formatHorizontal": "[ HH:mm:ss ] ddd, MMM dd",
                     "formatVertical": "HH mm - dd MM",
                     "id": "Clock",
-                    "tooltipFormat": "HH:mm ddd, MMM dd",
+                    "tooltipFormat": "HH:mm:ss ddd, MMM dd",
                     "useCustomFont": false
                 },
                 {
@@ -103,6 +103,21 @@
                 }
             ],
             "left": [
+                {
+                    "displayMode": "onhover",
+                    "iconColor": "none",
+                    "id": "Bluetooth",
+                    "textColor": "none"
+                },
+                {
+                    "deviceNativePath": "/org/bluez/hci0/dev_A8_6E_4E_88_73_AB",
+                    "displayMode": "icon-always",
+                    "hideIfIdle": false,
+                    "hideIfNotDetected": true,
+                    "id": "Battery",
+                    "showNoctaliaPerformance": false,
+                    "showPowerProfiles": false
+                },
                 {
                     "compactMode": false,
                     "diskPath": "/",
@@ -113,7 +128,7 @@
                     "showCpuUsage": true,
                     "showDiskAvailable": false,
                     "showDiskUsage": false,
-                    "showDiskUsageAsPercent": false,
+                    "showDiskUsageAsPercent": true,
                     "showGpuTemp": false,
                     "showLoadAverage": false,
                     "showMemoryAsPercent": false,
@@ -131,16 +146,16 @@
                     "hideWhenIdle": false,
                     "id": "MediaMini",
                     "maxWidth": 145,
-                    "panelShowAlbumArt": false,
+                    "panelShowAlbumArt": true,
                     "panelShowVisualizer": true,
                     "scrollingMode": "hover",
-                    "showAlbumArt": false,
+                    "showAlbumArt": true,
                     "showArtistFirst": true,
                     "showProgressRing": true,
                     "showVisualizer": true,
                     "textColor": "none",
                     "useFixedWidth": false,
-                    "visualizerType": "linear"
+                    "visualizerType": "wave"
                 }
             ],
             "right": [
@@ -320,16 +335,16 @@
         "allowPasswordWithFprintd": true,
         "animationDisabled": false,
         "animationSpeed": 1.25,
-        "autoStartAuth": true,
+        "autoStartAuth": false,
         "avatarImage": "/home/feraxhp/.config/noctalia/images/face.png",
         "boxRadiusRatio": 1,
-        "clockFormat": "hh\\nmm",
+        "clockFormat": "yyyy.MM.dd\\nhh:mm:ss",
         "clockStyle": "custom",
         "compactLockScreen": true,
-        "dimmerOpacity": 0,
+        "dimmerOpacity": 0.38,
         "enableLockScreenCountdown": true,
         "enableShadows": false,
-        "forceBlackScreenCorners": false,
+        "forceBlackScreenCorners": true,
         "iRadiusRatio": 0.63,
         "language": "",
         "lockOnSuspend": true,
@@ -342,7 +357,7 @@
         "shadowOffsetY": 3,
         "showChangelogOnStartup": true,
         "showHibernateOnLockScreen": false,
-        "showScreenCorners": false,
+        "showScreenCorners": true,
         "showSessionButtonsOnLockScreen": false,
         "telemetryEnabled": true
     },
@@ -447,37 +462,43 @@
                 "action": "lock",
                 "command": "",
                 "countdownEnabled": false,
-                "enabled": true
+                "enabled": true,
+                "keybind": ""
             },
             {
                 "action": "suspend",
                 "command": "",
                 "countdownEnabled": false,
-                "enabled": true
+                "enabled": true,
+                "keybind": ""
             },
             {
                 "action": "hibernate",
                 "command": "",
                 "countdownEnabled": false,
-                "enabled": true
+                "enabled": true,
+                "keybind": ""
             },
             {
                 "action": "reboot",
                 "command": "",
                 "countdownEnabled": true,
-                "enabled": true
+                "enabled": true,
+                "keybind": ""
             },
             {
                 "action": "logout",
                 "command": "",
                 "countdownEnabled": true,
-                "enabled": true
+                "enabled": true,
+                "keybind": ""
             },
             {
                 "action": "shutdown",
                 "command": "",
                 "countdownEnabled": true,
-                "enabled": true
+                "enabled": true,
+                "keybind": ""
             }
         ],
         "showHeader": true,
