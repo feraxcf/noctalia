@@ -113,9 +113,49 @@
                     "textColor": "none"
                 },
                 {
+                    "colorizeSystemIcon": "none",
+                    "enableColorization": false,
+                    "hideMode": "alwaysExpanded",
+                    "icon": "battery",
+                    "id": "CustomButton",
+                    "ipcIdentifier": "",
+                    "leftClickExec": "",
+                    "leftClickUpdateText": false,
+                    "maxTextLength": {
+                        "horizontal": 4,
+                        "vertical": 4
+                    },
+                    "middleClickExec": "",
+                    "middleClickUpdateText": false,
+                    "parseJson": true,
+                    "rightClickExec": "",
+                    "rightClickUpdateText": false,
+                    "showIcon": true,
+                    "textCollapse": "",
+                    "textCommand": "/home/feraxhp/projects/tprojects/attack/attack-shark-r5/target/release/attack-shark-r5",
+                    "textIntervalMs": 1000,
+                    "textStream": false,
+                    "wheelDownExec": "",
+                    "wheelDownUpdateText": false,
+                    "wheelExec": "",
+                    "wheelMode": "unified",
+                    "wheelUpExec": "",
+                    "wheelUpUpdateText": false,
+                    "wheelUpdateText": false
+                },
+                {
                     "deviceNativePath": "/org/bluez/hci0/dev_A8_6E_4E_88_73_AB",
                     "displayMode": "icon-always",
                     "hideIfIdle": false,
+                    "hideIfNotDetected": true,
+                    "id": "Battery",
+                    "showNoctaliaPerformance": false,
+                    "showPowerProfiles": false
+                },
+                {
+                    "deviceNativePath": "/org/bluez/hci0/dev_00_88_23_AC_0A_73",
+                    "displayMode": "icon-always",
+                    "hideIfIdle": true,
                     "hideIfNotDetected": true,
                     "id": "Battery",
                     "showNoctaliaPerformance": false,
@@ -228,7 +268,7 @@
         ]
     },
     "colorSchemes": {
-        "darkMode": true,
+        "darkMode": false,
         "generationMethod": "tonal-spot",
         "manualSunrise": "08:00",
         "manualSunset": "17:00",
