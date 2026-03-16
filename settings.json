@@ -13,15 +13,15 @@
         "enableSettingsSearch": true,
         "enableWindowsSearch": true,
         "iconMode": "tabler",
-        "ignoreMouseInput": false,
-        "overviewLayer": false,
+        "ignoreMouseInput": true,
+        "overviewLayer": true,
         "pinnedApps": [
         ],
-        "position": "top_center",
+        "position": "center",
         "screenshotAnnotationTool": "",
         "showCategories": true,
         "showIconBackground": false,
-        "sortByMostUsed": true,
+        "sortByMostUsed": false,
         "terminalCommand": "xterm -e",
         "useApp2Unit": false,
         "viewMode": "grid"
@@ -40,10 +40,10 @@
     "bar": {
         "autoHideDelay": 500,
         "autoShowDelay": 150,
-        "backgroundOpacity": 0.93,
+        "backgroundOpacity": 0,
         "barType": "simple",
         "capsuleColorKey": "none",
-        "capsuleOpacity": 1,
+        "capsuleOpacity": 0.8,
         "contentPadding": 2,
         "density": "default",
         "displayMode": "always_visible",
@@ -63,8 +63,8 @@
         "showCapsule": true,
         "showOnWorkspaceSwitch": true,
         "showOutline": true,
-        "useSeparateOpacity": false,
-        "widgetSpacing": 6,
+        "useSeparateOpacity": true,
+        "widgetSpacing": 4,
         "widgets": {
             "center": [
                 {
@@ -94,6 +94,18 @@
                     "showBadge": true,
                     "showLabelsOnlyWhenOccupied": true,
                     "unfocusedIconsOpacity": 1
+                },
+                {
+                    "defaultSettings": {
+                        "activeColor": "primary",
+                        "enableToast": true,
+                        "hideInactive": false,
+                        "iconSpacing": 4,
+                        "inactiveColor": "none",
+                        "micFilterRegex": "",
+                        "removeMargins": false
+                    },
+                    "id": "plugin:privacy-indicator"
                 },
                 {
                     "clockColor": "none",
@@ -220,17 +232,6 @@
             ],
             "right": [
                 {
-                    "blacklist": [
-                    ],
-                    "chevronColor": "none",
-                    "colorizeIcons": true,
-                    "drawerEnabled": true,
-                    "hidePassive": false,
-                    "id": "Tray",
-                    "pinned": [
-                    ]
-                },
-                {
                     "hideWhenZero": true,
                     "hideWhenZeroUnread": true,
                     "iconColor": "none",
@@ -260,6 +261,17 @@
                     "id": "Battery",
                     "showNoctaliaPerformance": true,
                     "showPowerProfiles": true
+                },
+                {
+                    "blacklist": [
+                    ],
+                    "chevronColor": "none",
+                    "colorizeIcons": true,
+                    "drawerEnabled": true,
+                    "hidePassive": false,
+                    "id": "Tray",
+                    "pinned": [
+                    ]
                 }
             ]
         }
@@ -288,7 +300,7 @@
         ]
     },
     "colorSchemes": {
-        "darkMode": true,
+        "darkMode": false,
         "generationMethod": "tonal-spot",
         "manualSunrise": "08:00",
         "manualSunset": "17:00",
@@ -325,7 +337,7 @@
             }
         ],
         "diskPath": "/",
-        "position": "top_center",
+        "position": "bottom_center",
         "shortcuts": {
             "left": [
                 {
@@ -412,14 +424,14 @@
         "allowPanelsOnScreenWithoutBar": true,
         "allowPasswordWithFprintd": true,
         "animationDisabled": false,
-        "animationSpeed": 1.25,
+        "animationSpeed": 1.8,
         "autoStartAuth": false,
         "avatarImage": "/home/feraxhp/.config/noctalia/images/face.png",
         "boxRadiusRatio": 1,
         "clockFormat": "yyyy.MM.dd\\nhh:mm:ss",
         "clockStyle": "custom",
         "compactLockScreen": true,
-        "dimmerOpacity": 0.38,
+        "dimmerOpacity": 0,
         "enableLockScreenCountdown": true,
         "enableShadows": false,
         "forceBlackScreenCorners": true,
@@ -459,7 +471,7 @@
         "radiusRatio": 0.6,
         "reverseScroll": false,
         "scaleRatio": 0.8500000000000001,
-        "screenRadiusRatio": 1,
+        "screenRadiusRatio": 0.55,
         "shadowDirection": "bottom_right",
         "shadowOffsetX": 2,
         "shadowOffsetY": 3,
@@ -529,7 +541,7 @@
         "density": "default",
         "enableBatteryToast": true,
         "enableKeyboardLayoutToast": true,
-        "enableMarkdown": false,
+        "enableMarkdown": true,
         "enableMediaToast": false,
         "enabled": true,
         "location": "top_right",
@@ -574,11 +586,11 @@
         "autoUpdate": false
     },
     "sessionMenu": {
-        "countdownDuration": 5000,
+        "countdownDuration": 2000,
         "enableCountdown": true,
         "largeButtonsLayout": "grid",
         "largeButtonsStyle": false,
-        "position": "top_center",
+        "position": "center",
         "powerOptions": [
             {
                 "action": "lock",
@@ -621,9 +633,16 @@
                 "countdownEnabled": true,
                 "enabled": true,
                 "keybind": "6"
+            },
+            {
+                "action": "rebootToUefi",
+                "command": "",
+                "countdownEnabled": true,
+                "enabled": true,
+                "keybind": ""
             }
         ],
-        "showHeader": true,
+        "showHeader": false,
         "showKeybinds": true
     },
     "settingsVersion": 53,
@@ -689,9 +708,9 @@
         "fontDefaultScale": 0.87,
         "fontFixed": "JetBrains Mono",
         "fontFixedScale": 0.9,
-        "panelBackgroundOpacity": 0.93,
+        "panelBackgroundOpacity": 0.85,
         "panelsAttachedToBar": true,
-        "settingsPanelMode": "attached",
+        "settingsPanelMode": "centered",
         "settingsPanelSideBarCardStyle": false,
         "tooltipsEnabled": true
     },
