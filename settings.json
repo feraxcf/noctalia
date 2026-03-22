@@ -478,13 +478,13 @@
         },
         "language": "",
         "lockOnSuspend": true,
-        "lockScreenAnimations": false,
+        "lockScreenAnimations": true,
         "lockScreenBlur": 0,
         "lockScreenCountdownDuration": 10000,
         "lockScreenMonitors": [
         ],
         "lockScreenTint": 0,
-        "passwordChars": false,
+        "passwordChars": true,
         "radiusRatio": 0.6,
         "reverseScroll": false,
         "scaleRatio": 0.8500000000000001,
@@ -667,6 +667,13 @@
                 "command": "",
                 "countdownEnabled": true,
                 "enabled": true,
+                "keybind": "7"
+            },
+            {
+                "action": "userspaceReboot",
+                "command": "",
+                "countdownEnabled": true,
+                "enabled": false,
                 "keybind": ""
             }
         ],
@@ -733,9 +740,9 @@
     "ui": {
         "boxBorderEnabled": false,
         "fontDefault": "JetBrains Mono NL Medium",
-        "fontDefaultScale": 0.87,
+        "fontDefaultScale": 0.84,
         "fontFixed": "JetBrains Mono",
-        "fontFixedScale": 0.9,
+        "fontFixedScale": 0.8200000000000001,
         "panelBackgroundOpacity": 0.85,
         "panelsAttachedToBar": true,
         "scrollbarAlwaysVisible": true,
