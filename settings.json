@@ -81,6 +81,7 @@
                 {
                     "colorizeDistroLogo": false,
                     "colorizeSystemIcon": "secondary",
+                    "colorizeSystemText": "none",
                     "customIconPath": "/home/feraxhp/.config/noctalia/images/icon.svg",
                     "enableColorization": false,
                     "icon": "noctalia",
@@ -88,9 +89,9 @@
                     "useDistroLogo": false
                 },
                 {
-                    "characterCount": 2,
+                    "characterCount": 4,
                     "colorizeIcons": false,
-                    "emptyColor": "secondary",
+                    "emptyColor": "tertiary",
                     "enableScrollWheel": true,
                     "focusedColor": "primary",
                     "followFocusedScreen": false,
@@ -99,7 +100,7 @@
                     "hideUnoccupied": false,
                     "iconScale": 0.8,
                     "id": "Workspace",
-                    "labelMode": "index",
+                    "labelMode": "name",
                     "occupiedColor": "secondary",
                     "pillSize": 0.6,
                     "showApplications": false,
@@ -143,10 +144,11 @@
                 },
                 {
                     "colorizeSystemIcon": "none",
-                    "enableColorization": false,
+                    "colorizeSystemText": "none",
                     "generalTooltipText": "",
                     "hideMode": "alwaysExpanded",
                     "icon": "mouse-off",
+                    "iconPosition": "left",
                     "id": "CustomButton",
                     "ipcIdentifier": "attack",
                     "leftClickExec": "",
@@ -243,21 +245,6 @@
             ],
             "right": [
                 {
-                    "hideWhenZero": true,
-                    "hideWhenZeroUnread": true,
-                    "iconColor": "none",
-                    "id": "NotificationHistory",
-                    "showUnreadBadge": true,
-                    "unreadBadgeColor": "secondary"
-                },
-                {
-                    "displayMode": "alwaysShow",
-                    "iconColor": "none",
-                    "id": "Microphone",
-                    "middleClickCommand": "pwvucontrol || pavucontrol",
-                    "textColor": "none"
-                },
-                {
                     "applyToAllMonitors": false,
                     "displayMode": "onhover",
                     "iconColor": "none",
@@ -274,14 +261,30 @@
                     "showPowerProfiles": true
                 },
                 {
+                    "displayMode": "alwaysShow",
+                    "iconColor": "none",
+                    "id": "Microphone",
+                    "middleClickCommand": "pwvucontrol || pavucontrol",
+                    "textColor": "none"
+                },
+                {
+                    "hideWhenZero": true,
+                    "hideWhenZeroUnread": true,
+                    "iconColor": "none",
+                    "id": "NotificationHistory",
+                    "showUnreadBadge": true,
+                    "unreadBadgeColor": "secondary"
+                },
+                {
                     "blacklist": [
                     ],
                     "chevronColor": "none",
-                    "colorizeIcons": true,
+                    "colorizeIcons": false,
                     "drawerEnabled": true,
                     "hidePassive": false,
                     "id": "Tray",
                     "pinned": [
+                        "Microsoft Teams (6)"
                     ]
                 }
             ]
@@ -289,6 +292,10 @@
     },
     "brightness": {
         "backlightDeviceMappings": [
+            {
+                "device": "/sys/class/backlight/intel_backlight",
+                "output": "HDMI-A-1"
+            }
         ],
         "brightnessStep": 1,
         "enableDdcSupport": true,
@@ -492,7 +499,7 @@
         "radiusRatio": 0.6,
         "reverseScroll": false,
         "scaleRatio": 0.8500000000000001,
-        "screenRadiusRatio": 0.55,
+        "screenRadiusRatio": 0.41000000000000003,
         "shadowDirection": "bottom_right",
         "shadowOffsetX": 2,
         "shadowOffsetY": 3,
@@ -750,7 +757,7 @@
         "fontDefaultScale": 0.84,
         "fontFixed": "JetBrains Mono",
         "fontFixedScale": 0.8200000000000001,
-        "panelBackgroundOpacity": 0,
+        "panelBackgroundOpacity": 0.51,
         "panelsAttachedToBar": true,
         "scrollbarAlwaysVisible": true,
         "settingsPanelMode": "centered",
