@@ -318,7 +318,7 @@
         ]
     },
     "colorSchemes": {
-        "darkMode": false,
+        "darkMode": true,
         "generationMethod": "tonal-spot",
         "manualSunrise": "08:00",
         "manualSunset": "17:00",
@@ -757,7 +757,7 @@
         "fontDefaultScale": 0.84,
         "fontFixed": "JetBrains Mono",
         "fontFixedScale": 0.8200000000000001,
-        "panelBackgroundOpacity": 0.51,
+        "panelBackgroundOpacity": 0,
         "panelsAttachedToBar": true,
         "scrollbarAlwaysVisible": true,
         "settingsPanelMode": "centered",
