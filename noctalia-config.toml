@@ -210,11 +210,18 @@ directory = "/home/feraxhp/images/walls"
     [wallpaper.last]
     path = "/usr/share/noctalia/assets/noctalia-wallpaper.png"
 
-[widget.audio_visualizer.actions]
-left = "panel-toggle control-center media"
+[widget.audio_visualizer]
+show_when_idle = true
+
+    [widget.audio_visualizer.actions]
+    left = "panel-toggle control-center media"
 
 [widget.clock]
 format = "• %H:%M:%S • %d %b, %a •"
+
+[widget.control-center]
+custom_image = "/home/feraxhp/.config/noctalia/images/face.png"
+icon_color = "primary"
 
 [widget.network]
 icon_color = "tertiary"
