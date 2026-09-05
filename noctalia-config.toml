@@ -5,6 +5,7 @@ enable_overdrive = true
 order = [ "top" ]
 
     [bar.top]
+    background_opacity = 1
     capsule = true
     capsule_border = "outline"
     capsule_opacity = 0.64999998547136784
@@ -12,6 +13,7 @@ order = [ "top" ]
     capsule_thickness = 0.64999998919665813
     center = [ "group:g2" ]
     end = [ "group:g3", "group:g5", "battery", "group:g4" ]
+    layer = "top"
     margin_ends = 150
     padding = 8
     radius_top_left = 80
@@ -80,7 +82,61 @@ order = [ "top" ]
 [brightness]
 enable_ddcutil = true
 
+[calendar]
+enabled = true
+event_date_format = "%Y.%m.%d"
+refresh_minutes = 5
+
+    [calendar.account.avvale]
+    color = "#3B8B05"
+    name = "avvale"
+    server_url = "https://outlook.office365.com/owa/calendar/b277bcbb7aa344bdbad82bf1d115dad9@avvale.com/f7a112a8498f40d4a4ee0676951b58922345964236348460692/calendar.ics"
+    type = "ics"
+
+    [calendar.account.feraxhp]
+    color = "#FB2626"
+    name = "[radicale] feraxhp"
+    provider = "custom"
+    server_url = "https://cal.feraxhp.com/feraxhp/12fe3e5c-33a3-271f-3e97-3ab74dac2ac5/"
+    type = "caldav"
+    username = "feraxhp"
+
 [config]
+
+[control_center]
+hidden_tabs = [ "audio" ]
+
+    [control_center.calendar]
+    show_week_numbers = true
+
+    [[control_center.shortcuts]]
+    type = "wifi"
+
+    [[control_center.shortcuts]]
+    type = "bluetooth"
+
+    [[control_center.shortcuts]]
+    type = "caffeine"
+
+    [[control_center.shortcuts]]
+    type = "nightlight"
+
+    [[control_center.shortcuts]]
+    type = "power_profile"
+
+    [[control_center.shortcuts]]
+    type = "yocraft/custom-shortcut:shortcut"
+
+[desktop_widgets]
+schema_version = 2
+widget_order = []
+
+    [desktop_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [desktop_widgets.widget]
 
 [hooks]
 theme_mode_changed = "~/.config/niri/themes/toggle.sh"
@@ -234,10 +290,17 @@ widget_order = [
         show_weather = true
 
 [notification]
+background_opacity = 0.88999998010694981
 max_visible = 2
+scale = 0.85000000521540642
+
+[plugin_settings."yocraft/custom-shortcut"]
+icon = "network"
+label = "Hopp"
+onclick_cmd = "pkill hopp || ~/apps/hopp.agent"
 
 [plugins]
-enabled = [ "cleboost/zed-provider", "blackbartblues/audio-switcher" ]
+enabled = [ "cleboost/zed-provider", "blackbartblues/audio-switcher", "yocraft/custom-shortcut" ]
 
 [shell]
 app_icon_color = "primary"
@@ -247,6 +310,9 @@ corner_radius_scale = 2.0
 font_family = "JetBrains Mono"
 niri_overview_type_to_launch_enabled = true
 screen_time_enabled = true
+
+    [shell.panel]
+    open_near_click_launcher = true
 
 [templates]
 
@@ -259,15 +325,19 @@ wallpaper_scheme = "m3-content"
 
     [theme.templates]
     builtin_ids = [ "alacritty", "gtk3", "gtk4", "qt" ]
+    community_ids = [ "gimp" ]
 
 [wallpaper]
 directory = "/home/feraxhp/images/walls"
 
     [wallpaper.default]
-    path = "/usr/share/noctalia/assets/noctalia-wallpaper.png"
+    path = "/home/feraxhp/images/walls/catppuccin_mocha_a_drawing_of_a_wolf_and_a_lion.png.png"
 
     [wallpaper.last]
-    path = "/usr/share/noctalia/assets/noctalia-wallpaper.png"
+    path = "/home/feraxhp/images/walls/catppuccin_mocha_a_drawing_of_a_wolf_and_a_lion.png.png"
+
+    [wallpaper.monitors.eDP-1]
+    path = "/home/feraxhp/images/walls/catppuccin_mocha_a_drawing_of_a_wolf_and_a_lion.png.png"
 
 [widget.audio_visualizer]
 show_when_idle = true
@@ -297,6 +367,10 @@ hide_when_no_unread = true
 [widget.theme_mode]
 font_family = "JetBrains Mono Medium"
 icon_color = "primary"
+
+    [widget.theme_mode.actions]
+    left = "panel-toggle control-center system"
+    right = "theme-mode-toggle"
 
 [widget.widget]
 type = "blackbartblues/audio-switcher:widget"
