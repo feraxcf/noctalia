@@ -2,7 +2,7 @@
 enable_overdrive = true
 
 [bar]
-order = [ "top" ]
+order = [ "top", "top-behaind" ]
 
     [bar.top]
     background_opacity = 1
@@ -18,6 +18,7 @@ order = [ "top" ]
     padding = 8
     radius_top_left = 80
     radius_top_right = 80
+    reserve_space = false
     scale = 0.90000000596046448
     start = [ "brightness", "workspaces", "group:g1" ]
     thickness = 32
@@ -78,6 +79,22 @@ order = [ "top" ]
         members = [ "widget", "input_volume" ]
         opacity = 0.64999997615814209
         padding = 8.0
+
+    [bar.top-behaind]
+    background_opacity = 0.0
+    capsule = true
+    capsule_border = "primary"
+    capsule_fill = "on_primary"
+    capsule_padding = 8.0
+    capsule_thickness = 0.64999998919665813
+    center = []
+    end = [ "cat", "temp" ]
+    margin_ends = 1
+    reserve_space = false
+    scale = 0.90000000596046448
+    shadow = false
+    start = [ "bluetooth", "privacy" ]
+    thickness = 32
 
 [brightness]
 enable_ddcutil = true
@@ -140,6 +157,7 @@ widget_order = []
     [desktop_widgets.widget]
 
 [hooks]
+session_unlocked = "~/.config/niri/scripts/audio.sh"
 theme_mode_changed = "~/.config/niri/themes/toggle.sh"
 
 [idle]
@@ -173,7 +191,12 @@ wallpaper = "/home/feraxhp/images/walls/cloud-coffee.jpg"
 [lockscreen_widgets]
 enabled = false
 schema_version = 2
-widget_order = [ "lockscreen-login-box@DP-3", "lockscreen-login-box@DP-2", "lockscreen-login-box@DP-1" ]
+widget_order = [
+    "lockscreen-login-box@winit",
+    "lockscreen-login-box@eDP-1",
+    "lockscreen-login-box@DP-2",
+    "lockscreen-login-box@DP-1"
+]
 
     [lockscreen_widgets.grid]
     cell_size = 16
@@ -320,13 +343,27 @@ background_opacity = 0.88999998010694981
 max_visible = 2
 scale = 0.85000000521540642
 
+[plugin_settings."alexander/screen-toolkit"]
+screenshot-path = "/home/feraxhp/images/tmp"
+selected-ocr-lang = "eng+esp"
+video-path = "/home/feraxhp/videos/tmp"
+
+[plugin_settings."damian-ds7/battery-threshold"]
+charge_threshold = 90
+
 [plugin_settings."yocraft/custom-shortcut"]
 icon = "network"
 label = "Hopp"
 onclick_cmd = "pkill hopp || ~/apps/hopp.agent"
 
 [plugins]
-enabled = [ "cleboost/zed-provider", "blackbartblues/audio-switcher" ]
+auto_update = "all"
+enabled = [
+    "cleboost/zed-provider",
+    "blackbartblues/audio-switcher",
+    "yocraft/custom-shortcut",
+    "dotnetrob/cat"
+]
 
 [shell]
 app_icon_color = "primary"
@@ -355,12 +392,13 @@ wallpaper_scheme = "m3-content"
 
 [wallpaper]
 directory = "/home/feraxhp/images/walls"
+transition_on_startup = true
 
     [wallpaper.default]
-    path = "/home/feraxhp/images/walls/cloud-coffee.jpg"
+    path = "/home/feraxhp/images/walls/catppuccin_mocha_a_drawing_of_a_wolf_and_a_lion.png.png"
 
     [wallpaper.last]
-    path = "/home/feraxhp/images/walls/cloud-coffee.jpg"
+    path = "/home/feraxhp/images/walls/catppuccin_mocha_a_drawing_of_a_wolf_and_a_lion.png.png"
 
     [wallpaper.monitors.DP-1]
     path = "/home/feraxhp/images/walls/cloud-coffee.jpg"
@@ -377,6 +415,13 @@ show_when_idle = true
     [widget.audio_visualizer.actions]
     left = "panel-toggle control-center media"
     right = "media toggle"
+
+[widget.cat]
+type = "dotnetrob/cat:cat"
+
+    [widget.cat.actions]
+    left = "exec echo"
+    right = "none"
 
 [widget.clock]
 format = "• %H:%M:%S • %d %b, %a •"
@@ -395,6 +440,18 @@ vpn_status = "both"
 
 [widget.notifications]
 hide_when_no_unread = true
+
+[widget.privacy]
+hide_inactive = true
+inactive_color = "on_surface"
+
+[widget.temp]
+label_show_units = false
+show_glyph = false
+visualization = "graph"
+
+    [widget.temp.actions]
+    left = "exec noctalia msg panel-toggle control-center system"
 
 [widget.theme_mode]
 font_family = "JetBrains Mono Medium"
