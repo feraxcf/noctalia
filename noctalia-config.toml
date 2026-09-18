@@ -2,7 +2,7 @@
 enable_overdrive = true
 
 [bar]
-order = [ "top-behaind", "top" ]
+order = [ "top-fake", "top-behaind", "top" ]
 
     [bar.top]
     background_opacity = 1
@@ -99,6 +99,17 @@ order = [ "top-behaind", "top" ]
         [bar.top-behaind.dead_zone.actions]
         left = "none"
         right = "none"
+
+    [bar.top-fake]
+    center = []
+    enabled = true
+    end = []
+    margin_edge = 22
+    margin_ends = 300
+    reserve_space = false
+    shadow = false
+    start = []
+    thickness = 10
 
 [brightness]
 enable_ddcutil = true
