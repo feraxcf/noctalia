@@ -388,6 +388,10 @@ background_opacity = 0.88999998010694981
 max_visible = 2
 scale = 0.85000000521540642
 
+[osd]
+background_opacity = 0.90
+offset_y = 42
+
 [plugin_settings."alexander/screen-toolkit"]
 screenshot-path = "/home/feraxhp/images/tmp"
 selected-ocr-lang = "eng+esp"
