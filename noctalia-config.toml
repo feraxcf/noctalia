@@ -2,7 +2,7 @@
 enable_overdrive = true
 
 [bar]
-order = [ "top-fake", "top-behaind", "top", "left" ]
+order = [ "top-behaind", "top", "left" ]
 
     [bar.left]
     background_opacity = 0.0
@@ -13,7 +13,7 @@ order = [ "top-fake", "top-behaind", "top", "left" ]
     capsule_padding = 10.0
     capsule_radius = 11
     capsule_thickness = 0.83999998494982719
-    center = []
+    center = [ "workspaces" ]
     concave_edge_corners = false
     enabled = true
     end = []
@@ -41,7 +41,7 @@ order = [ "top-fake", "top-behaind", "top", "left" ]
     radius_top_right = 80
     reserve_space = false
     scale = 0.90000000596046448
-    start = [ "brightness", "workspaces", "group:g1" ]
+    start = [ "brightness", "group:g1" ]
     thickness = 32
 
         [[bar.top.capsule_group]]
@@ -111,6 +111,7 @@ order = [ "top-fake", "top-behaind", "top", "left" ]
     center = []
     end = [ "cat", "temp" ]
     margin_ends = 1
+    padding = 8
     reserve_space = false
     scale = 0.90000000596046448
     shadow = false
@@ -120,17 +121,6 @@ order = [ "top-fake", "top-behaind", "top", "left" ]
         [bar.top-behaind.dead_zone.actions]
         left = "none"
         right = "none"
-
-    [bar.top-fake]
-    center = []
-    enabled = true
-    end = []
-    margin_edge = 22
-    margin_ends = 300
-    reserve_space = false
-    shadow = false
-    start = []
-    thickness = 10
 
 [brightness]
 enable_ddcutil = true
@@ -222,20 +212,23 @@ sunrise = "08:30"
 sunset = "17:00"
 
 [lockscreen]
-wallpaper = "/home/feraxhp/images/walls/cloud-coffee.jpg"
+blur_intensity = 0.0
+tint_intensity = 0.0
+wallpaper = "/home/feraxhp/.config/noctalia/images/lockscreen.jpg"
 
 [lockscreen_widgets]
-enabled = false
+enabled = true
 schema_version = 2
 widget_order = [
     "lockscreen-login-box@winit",
     "lockscreen-login-box@eDP-1",
     "lockscreen-login-box@DP-2",
-    "lockscreen-login-box@DP-1"
+    "lockscreen-login-box@DP-1",
+    "lockscreen-widget-0000000000000001"
 ]
 
     [lockscreen_widgets.grid]
-    cell_size = 16
+    cell_size = 8
     major_interval = 4
     visible = true
 
@@ -321,10 +314,10 @@ widget_order = [
         show_weather = true
 
     [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
-    box_height = 196.0
-    box_width = 810.0
-    cx = 764.0
-    cy = 836.0
+    box_height = 70.0
+    box_width = 400.0
+    cx = 763.5
+    cy = 938.0
     output = "eDP-1"
     placement_height = 1018.0
     placement_width = 1527.0
@@ -333,19 +326,19 @@ widget_order = [
 
         [lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
         background_color = "surface_variant"
-        background_opacity = 0.88
-        background_radius = 12.0
-        center_password_text = false
-        input_opacity = 1.0
-        input_radius = 6.0
-        layout = "regular"
+        background_opacity = 0.0
+        background_radius = 0.0
+        center_password_text = true
+        input_opacity = 0.0
+        input_radius = 4.0
+        layout = "compact"
         show_caps_lock = true
         show_keyboard_layout = true
-        show_login_button = true
-        show_media = true
-        show_session_buttons = true
-        show_unlock_hint = true
-        show_weather = true
+        show_login_button = false
+        show_media = false
+        show_session_buttons = false
+        show_unlock_hint = false
+        show_weather = false
 
     [lockscreen_widgets.widget."lockscreen-login-box@winit"]
     box_height = 196.0
@@ -374,6 +367,22 @@ widget_order = [
         show_unlock_hint = true
         show_weather = true
 
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000001]
+    box_height = 0.0
+    box_width = 0.0
+    cx = 763.5
+    cy = 181.5
+    output = "eDP-1"
+    placement_height = 1018.0
+    placement_width = 1527.0
+    rotation = 0.0
+    type = "clock"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000001.settings]
+        background = false
+        clock_style = "digital"
+        color = "#CDD6F4"
+
 [notification]
 background_opacity = 0.88999998010694981
 max_visible = 2
@@ -399,7 +408,7 @@ enabled = [
     "blackbartblues/audio-switcher",
     "yocraft/custom-shortcut",
     "dotnetrob/cat",
-    "hy4ri/github-notifications",
+    "hy4ri/github-notifications"
 ]
 
 [shell]
@@ -409,6 +418,7 @@ avatar_path = "/home/feraxhp/.config/noctalia/images/face.png"
 corner_radius_scale = 2.0
 font_family = "JetBrains Mono"
 niri_overview_type_to_launch_enabled = true
+panel_anchor_bar = "top"
 screen_time_enabled = true
 
     [shell.panel]
@@ -435,10 +445,10 @@ directory = "/home/feraxhp/images/walls"
 transition_on_startup = true
 
     [wallpaper.default]
-    path = "/home/feraxhp/images/walls/catppuccin_mocha_a_drawing_of_a_wolf_and_a_lion.png.png"
+    path = "/home/feraxhp/images/walls/light-circuit-city.png"
 
     [wallpaper.last]
-    path = "/home/feraxhp/images/walls/catppuccin_mocha_a_drawing_of_a_wolf_and_a_lion.png.png"
+    path = "/home/feraxhp/images/walls/light-circuit-city.png"
 
     [wallpaper.monitors.DP-1]
     path = "/home/feraxhp/images/walls/cloud-coffee.jpg"
@@ -447,7 +457,7 @@ transition_on_startup = true
     path = "/home/feraxhp/images/walls/cloud-coffee.jpg"
 
     [wallpaper.monitors.eDP-1]
-    path = "/home/feraxhp/images/walls/catppuccin_mocha_a_drawing_of_a_wolf_and_a_lion.png.png"
+    path = "/home/feraxhp/images/walls/light-circuit-city.png"
 
 [widget.audio_visualizer]
 show_when_idle = true
@@ -455,6 +465,10 @@ show_when_idle = true
     [widget.audio_visualizer.actions]
     left = "panel-toggle control-center media"
     right = "media toggle"
+
+[widget.bluetooth]
+hide_when_no_connected_device = false
+show_label = false
 
 [widget.cat]
 type = "dotnetrob/cat:cat"
@@ -516,6 +530,7 @@ icon_color = "primary"
     back = "exec noctalia msg theme-mode-set auto"
     left = "panel-toggle control-center system"
     right = "theme-mode-toggle"
+    scroll_left = "exec noctalia msg theme-mode-set auto"
 
 [widget.widget]
 type = "blackbartblues/audio-switcher:widget"
