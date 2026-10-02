@@ -157,7 +157,8 @@ refresh_minutes = 5
 [config]
 
 [control_center]
-hidden_tabs = [ "audio" ]
+hidden_tabs = []
+width = 800
 
     [control_center.calendar]
     show_week_numbers = true
@@ -222,18 +223,23 @@ sunset = "17:00"
 
 [lockscreen]
 blur_intensity = 0.0
+edge_smoothness = 0.1099999975413084
 tint_intensity = 0.0
+transition = [ "honeycomb" ]
+transition_duration = 1300
 wallpaper = "/home/feraxhp/.config/noctalia/images/lockscreen.jpg"
 
 [lockscreen_widgets]
 enabled = true
 schema_version = 2
 widget_order = [
+    "lockscreen-login-box@DP-3",
     "lockscreen-login-box@winit",
     "lockscreen-login-box@eDP-1",
     "lockscreen-login-box@DP-2",
     "lockscreen-login-box@DP-1",
-    "lockscreen-widget-0000000000000001"
+    "lockscreen-widget-0000000000000001",
+    "lockscreen-widget-0000000000000002"
 ]
 
     [lockscreen_widgets.grid]
@@ -242,10 +248,11 @@ widget_order = [
     visible = true
 
     [lockscreen_widgets.widget."lockscreen-login-box@DP-1"]
-    box_height = 196.0
-    box_width = 810.0
+    box_height = 70.0
+    box_width = 240.0
     cx = 960.0
-    cy = 898.0
+    cy = 1033.0
+    enabled = false
     output = "DP-1"
     placement_height = 1080.0
     placement_width = 1920.0
@@ -254,18 +261,18 @@ widget_order = [
 
         [lockscreen_widgets.widget."lockscreen-login-box@DP-1".settings]
         background_color = "surface_variant"
-        background_opacity = 0.88
+        background_opacity = 0.0
         background_radius = 12.0
-        center_password_text = false
+        center_password_text = true
         input_opacity = 1.0
         input_radius = 6.0
-        layout = "regular"
-        show_caps_lock = true
-        show_keyboard_layout = true
-        show_login_button = true
+        layout = "compact"
+        show_caps_lock = false
+        show_keyboard_layout = false
+        show_login_button = false
         show_media = true
         show_session_buttons = true
-        show_unlock_hint = true
+        show_unlock_hint = false
         show_weather = true
 
     [lockscreen_widgets.widget."lockscreen-login-box@DP-2"]
@@ -273,6 +280,7 @@ widget_order = [
     box_width = 810.0
     cx = 960.0
     cy = 898.0
+    enabled = false
     output = "DP-2"
     placement_height = 1080.0
     placement_width = 1920.0
@@ -300,6 +308,7 @@ widget_order = [
     box_width = 810.0
     cx = 960.0
     cy = 898.0
+    enabled = false
     output = "DP-3"
     placement_height = 1080.0
     placement_width = 1920.0
@@ -392,6 +401,22 @@ widget_order = [
         clock_style = "digital"
         color = "#CDD6F4"
 
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000002]
+    box_height = 88.0
+    box_width = 192.0
+    cx = 960.0
+    cy = 200.0
+    output = "DP-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "clock"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000002.settings]
+        background = false
+        color = "#EBECF4"
+        font_family = ""
+
 [notification]
 background_opacity = 0.88999998010694981
 history_retention_hours = 1
@@ -423,7 +448,7 @@ enabled = [
     "blackbartblues/audio-switcher",
     "yocraft/custom-shortcut",
     "dotnetrob/cat",
-    "hy4ri/github-notifications"
+    "hy4ri/github-notifications",
 ]
 
 [shell]
@@ -434,10 +459,13 @@ corner_radius_scale = 2.0
 font_family = "JetBrains Mono"
 niri_overview_type_to_launch_enabled = true
 panel_anchor_bar = "top"
+polkit_agent = true
 screen_time_enabled = true
 
     [shell.panel]
     open_near_click_launcher = true
+    polkit_placement = "attached"
+    polkit_position = "top_center"
 
     [shell.screenshot]
     directory = "/home/feraxhp/images/screenshots"
@@ -462,19 +490,23 @@ wallpaper_scheme = "m3-content"
 
 [wallpaper]
 directory = "/home/feraxhp/images/walls"
+transition = [ "honeycomb" ]
 transition_on_startup = true
 
     [wallpaper.default]
-    path = "/home/feraxhp/images/walls/light-circuit-city.png"
+    path = "/home/feraxhp/images/walls/Cloudsday.jpg"
 
     [wallpaper.last]
-    path = "/home/feraxhp/images/walls/light-circuit-city.png"
+    path = "/home/feraxhp/images/walls/Cloudsday.jpg"
 
     [wallpaper.monitors.DP-1]
-    path = "/home/feraxhp/images/walls/cloud-coffee.jpg"
+    path = "/home/feraxhp/images/walls/Cloudsday.jpg"
 
     [wallpaper.monitors.DP-2]
-    path = "/home/feraxhp/images/walls/cloud-coffee.jpg"
+    path = "/home/feraxhp/images/walls/Cloudsday.jpg"
+
+    [wallpaper.monitors.DP-3]
+    path = "/home/feraxhp/images/walls/Cloudsday.jpg"
 
     [wallpaper.monitors.eDP-1]
     path = "/home/feraxhp/images/walls/light-circuit-city.png"
@@ -517,6 +549,7 @@ type = "hy4ri/github-notifications:inbox"
 
     [widget.inbox.actions]
     left = "exec noctalia msg panel-toggle hy4ri/github-notifications:panel"
+    right = "exec noctalia msg plugin hy4ri/github-notifications:sync all refresh"
 
 [widget.media]
 album_art_only = true
