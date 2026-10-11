@@ -193,7 +193,7 @@ widget_order = []
     [desktop_widgets.widget]
 
 [hooks]
-session_unlocked = "~/.config/niri/scripts/audio.sh"
+session_unlocked = "~/.config/noctalia/scripts/unlock.sh"
 theme_mode_changed = "~/.config/niri/themes/toggle.sh"
 
 [idle]
