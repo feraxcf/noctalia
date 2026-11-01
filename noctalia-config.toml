@@ -28,7 +28,7 @@ order = [ "top-behaind", "top", "left" ]
     [bar.top]
     background_opacity = 1
     capsule = true
-    capsule_border = "outline"
+    capsule_border = "outline_variant"
     capsule_opacity = 0.64999998547136784
     capsule_padding = 8.0
     capsule_thickness = 0.64999998919665813
@@ -47,9 +47,9 @@ order = [ "top-behaind", "top", "left" ]
         [[bar.top.capsule_group]]
         accordion = false
         accordion_direction = "end"
-        border = "outline"
+        border = "outline_variant"
         enabled = true
-        fill = "surface_variant"
+        fill = "surface_container"
         id = "g1"
         members = [ "media", "audio_visualizer" ]
         opacity = 0.64999997615814209
@@ -58,9 +58,9 @@ order = [ "top-behaind", "top", "left" ]
         [[bar.top.capsule_group]]
         accordion = false
         accordion_direction = "end"
-        border = "outline"
+        border = "outline_variant"
         enabled = true
-        fill = "surface_variant"
+        fill = "surface_container"
         id = "g2"
         members = [ "control-center", "clock", "theme_mode" ]
         opacity = 0.64999997615814209
@@ -71,9 +71,9 @@ order = [ "top-behaind", "top", "left" ]
         [[bar.top.capsule_group]]
         accordion = false
         accordion_direction = "end"
-        border = "outline"
+        border = "outline_variant"
         enabled = true
-        fill = "surface_variant"
+        fill = "surface_container"
         id = "g3"
         members = [ "network", "bluetooth" ]
         opacity = 0.64999997615814209
@@ -82,9 +82,9 @@ order = [ "top-behaind", "top", "left" ]
         [[bar.top.capsule_group]]
         accordion = false
         accordion_direction = "end"
-        border = "outline"
+        border = "outline_variant"
         enabled = true
-        fill = "surface_variant"
+        fill = "surface_container"
         id = "g4"
         members = [ "notifications", "tray" ]
         opacity = 0.64999997615814209
@@ -93,9 +93,9 @@ order = [ "top-behaind", "top", "left" ]
         [[bar.top.capsule_group]]
         accordion = false
         accordion_direction = "end"
-        border = "outline"
+        border = "outline_variant"
         enabled = true
-        fill = "surface_variant"
+        fill = "surface_container"
         id = "g5"
         members = [ "widget", "input_volume" ]
         opacity = 0.64999997615814209
@@ -260,7 +260,7 @@ widget_order = [
     type = "login_box"
 
         [lockscreen_widgets.widget."lockscreen-login-box@DP-1".settings]
-        background_color = "surface_variant"
+        background_color = "surface_container"
         background_opacity = 0.88
         background_radius = 12.0
         center_password_text = false
@@ -288,7 +288,7 @@ widget_order = [
     type = "login_box"
 
         [lockscreen_widgets.widget."lockscreen-login-box@DP-2".settings]
-        background_color = "surface_variant"
+        background_color = "surface_container"
         background_opacity = 0.88
         background_radius = 12.0
         center_password_text = false
@@ -316,7 +316,7 @@ widget_order = [
     type = "login_box"
 
         [lockscreen_widgets.widget."lockscreen-login-box@DP-3".settings]
-        background_color = "surface_variant"
+        background_color = "surface_container"
         background_opacity = 0.88
         background_radius = 12.0
         center_password_text = false
@@ -343,7 +343,7 @@ widget_order = [
     type = "login_box"
 
         [lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
-        background_color = "surface_variant"
+        background_color = "surface_container"
         background_opacity = 0.0
         background_radius = 0.0
         center_password_text = true
@@ -370,7 +370,7 @@ widget_order = [
     type = "login_box"
 
         [lockscreen_widgets.widget."lockscreen-login-box@winit".settings]
-        background_color = "surface_variant"
+        background_color = "surface_container"
         background_opacity = 0.88
         background_radius = 12.0
         center_password_text = false
@@ -427,14 +427,6 @@ scale = 0.85000000521540642
 [osd]
 background_opacity = 0.88999998010694981
 offset_y = 42
-
-[plugin_settings."alexander/screen-toolkit"]
-screenshot-path = "/home/feraxhp/images/tmp"
-selected-ocr-lang = "eng+esp"
-video-path = "/home/feraxhp/videos/tmp"
-
-[plugin_settings."damian-ds7/battery-threshold"]
-charge_threshold = 90
 
 [plugin_settings."yocraft/custom-shortcut"]
 icon = "network"
