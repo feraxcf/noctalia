@@ -22,7 +22,7 @@ order = [ "top-behaind", "top", "left" ]
     position = "left"
     reserve_space = false
     scale = 0.90000000596046448
-    start = [ "privacy" ]
+    start = [ "privacy", "battery-left" ]
     thickness = 32
 
     [bar.top]
@@ -33,7 +33,7 @@ order = [ "top-behaind", "top", "left" ]
     capsule_padding = 8.0
     capsule_thickness = 0.64999998919665813
     center = [ "group:g2" ]
-    end = [ "group:g3", "group:g5", "battery", "group:g4" ]
+    end = [ "group:g3", "group:g5", "battery-top", "group:g4" ]
     layer = "top"
     margin_ends = 150
     padding = 8
@@ -133,6 +133,7 @@ warning_threshold = 30
 
 [brightness]
 enable_ddcutil = true
+minimum_brightness = 0.0099999997764825821
 sync_all_monitors = true
 
 [calendar]
@@ -157,7 +158,7 @@ refresh_minutes = 5
 [config]
 
 [control_center]
-hidden_tabs = []
+hidden_tabs = [ "audio" ]
 width = 800
 
     [control_center.calendar]
@@ -222,6 +223,7 @@ sunrise = "08:00"
 sunset = "17:00"
 
 [lockscreen]
+allow_empty_password = true
 blur_intensity = 0.0
 edge_smoothness = 0.1099999975413084
 tint_intensity = 0.0
@@ -233,13 +235,11 @@ wallpaper = "/home/feraxhp/.config/noctalia/images/lockscreen.jpg"
 enabled = true
 schema_version = 2
 widget_order = [
-    "lockscreen-login-box@DP-3",
     "lockscreen-login-box@winit",
     "lockscreen-login-box@eDP-1",
     "lockscreen-login-box@DP-2",
     "lockscreen-login-box@DP-1",
-    "lockscreen-widget-0000000000000001",
-    "lockscreen-widget-0000000000000002"
+    "lockscreen-widget-0000000000000001"
 ]
 
     [lockscreen_widgets.grid]
@@ -336,6 +336,7 @@ widget_order = [
     box_width = 240.0
     cx = 755.5
     cy = 941.0
+    enabled = false
     output = "eDP-1"
     placement_height = 1018.0
     placement_width = 1527.0
@@ -389,7 +390,7 @@ widget_order = [
     box_height = 0.0
     box_width = 0.0
     cx = 763.5
-    cy = 181.5
+    cy = 914.5
     output = "eDP-1"
     placement_height = 1018.0
     placement_width = 1527.0
@@ -428,6 +429,14 @@ scale = 0.85000000521540642
 background_opacity = 0.88999998010694981
 offset_y = 42
 
+[plugin_settings."alexander/screen-toolkit"]
+screenshot-path = "/home/feraxhp/images/tmp"
+selected-ocr-lang = "eng+esp"
+video-path = "/home/feraxhp/videos/tmp"
+
+[plugin_settings."damian-ds7/battery-threshold"]
+charge_threshold = 90
+
 [plugin_settings."yocraft/custom-shortcut"]
 icon = "network"
 label = "Hopp"
@@ -437,10 +446,10 @@ onclick_cmd = "pkill hopp || ~/apps/hopp.agent"
 auto_update = "all"
 enabled = [
     "cleboost/zed-provider",
-    "blackbartblues/audio-switcher",
     "yocraft/custom-shortcut",
     "dotnetrob/cat",
     "hy4ri/github-notifications",
+    "blackbartblues/audio-switcher"
 ]
 
 [shell]
@@ -479,7 +488,7 @@ source = "community"
 wallpaper_scheme = "m3-content"
 
     [theme.templates]
-    builtin_ids = [ "alacritty", "gtk3", "gtk4", "qt" ]
+    builtin_ids = [ "alacritty", "gtk3", "gtk4", "ghostty", "qt" ]
     community_ids = [ "gimp" ]
 
 [wallpaper]
@@ -488,10 +497,10 @@ transition = [ "honeycomb" ]
 transition_on_startup = true
 
     [wallpaper.default]
-    path = "/home/feraxhp/images/walls/Cloudsday.jpg"
+    path = "/home/feraxhp/images/walls/light-circuit-city.png"
 
     [wallpaper.last]
-    path = "/home/feraxhp/images/walls/Cloudsday.jpg"
+    path = "/home/feraxhp/images/walls/light-circuit-city.png"
 
     [wallpaper.monitors.DP-1]
     path = "/home/feraxhp/images/walls/Cloudsday.jpg"
@@ -511,6 +520,21 @@ show_when_idle = true
     [widget.audio_visualizer.actions]
     left = "panel-toggle control-center media"
     right = "media toggle"
+
+[widget.battery]
+device = "/org/freedesktop/UPower/devices/headset_dev_A8_6E_4E_88_73_AB"
+
+[widget.battery-left]
+capsule_opacity = 0.82000000000000006
+capsule_padding = 16
+device = "/org/freedesktop/UPower/devices/headset_dev_A8_6E_4E_88_73_AB"
+font_scale = 0.85000000000000009
+icon_color = "on_surface_variant"
+type = "battery"
+warning_color = "on_secondary_container"
+
+[widget.battery-top]
+type = "battery"
 
 [widget.bluetooth]
 hide_when_no_connected_device = false
